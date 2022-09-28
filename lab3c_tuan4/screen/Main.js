@@ -1,16 +1,29 @@
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View, Image, TouchableOpacity } from 'react-native';
 import { Rating } from 'react-native-ratings';
-import * as React from 'react';
+
+import React, {  useEffect,useState } from 'react';
+import {useRoute } from '@react-navigation/native';
 
 
-export default function Main({ navigation }) {
+export default function Main({  navigation }) {
+  const route = useRoute();
+
+  var blue = require("../assets/xanh.png");
+  var [color, setColor] = useState(blue);
+
+  useEffect(() => {
+    if (route.params != null)
+    setColor(route.params.colorSelected);
+    console.log(route.params);
+  });
+  
   return (
     
     <View style={styles.container}>
         <View style={styles.mainFirst}>
             <Image
-                source={require('../assets/xanh.png')}
+                source={color}
                 style={styles.image} />
             <Text style={styles.txtIntroduce}>Điện Thoại Vsmart Joy 3 - Hàng chính hãng</Text>
             <View style={styles.viewEvaluate}>
@@ -32,7 +45,7 @@ export default function Main({ navigation }) {
             </View>
             <TouchableOpacity 
                 style={styles.btnChooseColor} 
-                onPress={()=> {navigation.navigate("ChooseColor")}}>
+                onPress={()=> navigation.navigate("ChooseColor")}>
                     <Text style={styles.txtChooseColor}>4 MÀU-CHỌN MÀU              {">"}</Text>
             </TouchableOpacity>
         </View>
@@ -63,7 +76,7 @@ const styles = StyleSheet.create({
   },
   mainLast:{
     justifyContent: 'flex-start',
-    alignItems: 'center',
+    alignItems: 'flex-start',
     flexDirection: 'column',
     height:'15%',
     width:'100%',

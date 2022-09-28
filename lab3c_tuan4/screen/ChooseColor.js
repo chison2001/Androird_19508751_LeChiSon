@@ -1,54 +1,99 @@
 import { StyleSheet, Text, View, Image, ScrollView, TouchableOpacity } from 'react-native';
-
 import React,  { useState } from "react";
-import { useNavigation } from "@react-navigation/native";
 
-export default function ChooseColor() {
-    const navigation = useNavigation();
-    const blue = require("../assets/xanh.png");
-    const red = require("../assets/do.png");
-    const silver = require("../assets/bac.png");
-    const black = require("../assets/den.png");
-    const colors = { red, blue, silver, black };
-    const [select, setSelected] = useState(colors.blue);
 
+
+export default function ChooseColor({ navigation }) {
+  const title = "Điện thoại VSmart Joy 3\nHàng chính hãng"
+    var blue = require("../assets/xanh.png");
+    var red = require("../assets/do.png");
+    var silver = require("../assets/bac.png");
+    var black = require("../assets/den.png");
+    var colors = { red, blue, silver, black };
+    var [select, setSelected] = useState(colors.blue);
+    var [title_color, setTitle_color] = useState("");
+    var [color, setColor] = useState("");
+    var [provide, setProvide] = useState("");
+    var [provider, setProvider] = useState("");
+    var [cost, setCost] = useState("");
+    function pressSilver() {
+      return (
+          setTitle_color(title_color = "Màu: "),
+          setColor(color = "Bạc"),
+          setProvide(provide = "Cung cấp bởi "),
+          setProvider(provider = "Tiki Tradding"),
+          setCost(cost = "1.790.000 đ"),
+          setSelected(colors.silver)
+      );
+  }
+  function pressRed() {
+    return (
+        setTitle_color(title_color = "Màu: "),
+        setColor(color = "Đỏ"),
+        setProvide(provide = "Cung cấp bởi "),
+        setProvider(provider = "Tiki Tradding"),
+        setCost(cost = "1.790.000 đ"),
+        setSelected(colors.red)
+    );
+}
+function pressBlack() {
+  return (
+      setTitle_color(title_color = "Màu: "),
+      setColor(color = "Bạc"),
+      setProvide(provide = "Cung cấp bởi "),
+      setProvider(provider = "Tiki Tradding"),
+      setCost(cost = "1.790.000 đ"),
+      setSelected(colors.black)
+  );
+}
+function pressBlue() {
+  return (
+      setTitle_color(title_color = "Màu: "),
+      setColor(color = "Bạc"),
+      setProvide(provide = "Cung cấp bởi "),
+      setProvider(provider = "Tiki Tradding"),
+      setCost(cost = "1.790.000 đ"),
+      setSelected(colors.blue)
+  );
+}
   return (
     <View style={styles.container}>
       <ScrollView>
         <View style={styles.viewHeader}>
           <Image source={select} style={styles.imageProduct} />
           <View style={{ marginTop: 10, marginLeft: 10 }}>
-            <Text>Điện Thoại Vsmart Joy 3</Text>
-            <Text>Hàng chính hãng</Text>
+            <Text style={{fontSize: 26,}}>{title}</Text>
+            <View style={{ flexDirection : "row", justifyContent: "flex-start"}}>
+              <Text style={{fontSize: 20,}}>{title_color} :</Text>
+              <Text style={{fontSize: 20, fontWeight:'bold'}}>{color}</Text>
+            </View>
+            <View style={{ flexDirection : "row", justifyContent: "flex-start"}}>
+              <Text style={{fontSize: 20,}}>{provide}</Text>
+              <Text style={{fontSize: 20, fontWeight:'bold'}}>{provider}</Text>
+            </View>
+            <Text style={{fontSize: 20, fontWeight: 'bold'}}>{cost}</Text>
+
           </View>
         </View>
         <View style={styles.viewFooter}>
             <Text style={styles.txtChooseColor} >Chọn một màu bên dưới:</Text>
           <TouchableOpacity
-            onPress={() => {
-              setSelected(colors.silver);
-            }}
+            onPress={() => pressSilver()}
           >
             <View style={[styles.color, { backgroundColor: "#C5F1FB" }]}></View>
           </TouchableOpacity>
           <TouchableOpacity
-            onPress={() => {
-              setSelected(colors.red);
-            }}
+            onPress={() => pressRed()}
           >
             <View style={[styles.color, { backgroundColor: "red" }]}></View>
           </TouchableOpacity>
           <TouchableOpacity
-            onPress={() => {
-              setSelected(colors.black);
-            }}
+            onPress={() => pressBlack()}
           >
             <View style={[styles.color, { backgroundColor: "black" }]}></View>
           </TouchableOpacity>
           <TouchableOpacity
-            onPress={() => {
-              setSelected(colors.blue);
-            }}
+            onPress={() => pressBlue()}
           >
             <View style={[styles.color, { backgroundColor: "blue" }]}></View>
           </TouchableOpacity>
