@@ -1,0 +1,51 @@
+var flatListData  = [
+    {
+        "product": "Cáp chuyển từ Cổng USB sang PS2...",
+        "price": "69.900 đ",
+        "discount": "-39%",
+        "img": "https://res.cloudinary.com/dwbnrx0mg/image/upload/v1664440146/lab4b/giacchuyen_1_javwzb.png",
+        "rating": "4",
+        "ratingTimes": "15",      
+    },
+    {
+        "product": "Cáp chuyển từ Cổng USB sang PS2...",
+        "price": "69.900 đ",
+        "discount": "-39%",
+        "img": "https://res.cloudinary.com/dwbnrx0mg/image/upload/v1664440147/lab4b/daynguon_1_egeqpe.png",
+        "rating": "4",
+        "ratingTimes": "15",      
+    },
+    {
+        "product": "Cáp chuyển từ Cổng USB sang PS2...",
+        "price": "69.900 đ",
+        "discount": "-39%",
+        "img": "https://res.cloudinary.com/dwbnrx0mg/image/upload/v1664440148/lab4b/dauchuyendoipsps2_1_aecvvs.png",
+        "rating": "4",
+        "ratingTimes": "15",      
+    },
+    {
+        "product": "Cáp chuyển từ Cổng USB sang PS2...",
+        "price": "69.900 đ",
+        "discount": "-39%",
+        "img": "https://res.cloudinary.com/dwbnrx0mg/image/upload/v1664440149/lab4b/dauchuyendoi_1_ssecl4.png",
+        "rating": "4",
+        "ratingTimes": "15",      
+    },
+    {
+        "product": "Cáp chuyển từ Cổng USB sang PS2...",
+        "price": "69.900 đ",
+        "discount": "-39%",
+        "img": "https://res.cloudinary.com/dwbnrx0mg/image/upload/v1664440150/lab4b/carbusbtops2_1_g7jil9.png",
+        "rating": "4",
+        "ratingTimes": "15",      
+    },
+    {
+        "product": "Cáp chuyển từ Cổng USB sang PS2...",
+        "price": "69.900 đ",
+        "discount": "-39%",
+        "img": "https://res.cloudinary.com/dwbnrx0mg/image/upload/v1664440151/lab4b/daucam_1_y7woe2.png",
+        "rating": "4",
+        "ratingTimes": "15",      
+    },
+]
+module.exports = flatListData;
